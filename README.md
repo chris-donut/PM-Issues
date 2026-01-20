@@ -1,27 +1,51 @@
 # PM Issues
 
-A repository for tracking and managing product management issues, discussions, and decisions.
+Product management tools and workflows for the Donut team.
 
-## Purpose
+## PM Engine v2.3
 
-This repository serves as a centralized place for:
-- Product requirements and specifications
-- Issue tracking and prioritization
-- Feature discussions and decisions
-- Release planning documentation
+A Claude Code skill that enforces disciplined product management with:
+- **4-Input Gate**: User feedback, product state, success metric, OKR
+- **5+ Options**: Ranked by P(conversion)
+- **GitHub/Screenshot Support**: Paste links or drag screenshots
 
-## Getting Started
+### Quick Install
 
-Add your issues and documentation to this repository to begin tracking your product management workflow.
+```bash
+# One-liner install
+curl -o ~/.claude/commands/pm.md https://raw.githubusercontent.com/chris-donut/PM-Issues/main/pm-engine/pm.md
 
-## Structure
+# Or symlink (for auto-updates)
+git clone https://github.com/chris-donut/PM-Issues.git
+ln -sf $(pwd)/PM-Issues/pm-engine/pm.md ~/.claude/commands/pm.md
+```
+
+### Usage
 
 ```
-PM Issues/
+/pm
+```
+
+Then provide:
+1. **User Feedback**: What problem are we solving?
+2. **Product State**: GitHub link, screenshot, or file path
+3. **Success Metric**: What metric defines success?
+4. **OKR Objective**: Which team objective does this support?
+
+See [pm-engine/README.md](./pm-engine/README.md) for full documentation.
+
+## Repository Contents
+
+```
+PM-Issues/
 ├── README.md
-└── (your issues and docs here)
+├── PM_ENGINE_v2.1.md      # Original prompt (archived)
+├── pm-engine/
+│   ├── pm.md              # Claude Code skill (latest)
+│   └── README.md          # Installation & usage docs
+└── ...
 ```
 
 ## Contributing
 
-Feel free to open issues or submit pull requests for any product-related discussions.
+Open issues or PRs for PM workflow improvements.
